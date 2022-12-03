@@ -1,0 +1,16 @@
+===================================================================
+How to install +++++++++++++++++++++++++++
+===================================================================
+
+For to install modules tkcalendar and pymysql open CMD and entry this command
+
+C:\User>pip install tkcalendar
+
+C:\User>pip install pymysql
+
+
+Pour installer les modules tkcalendar et pymysql ouvrez l'invite de commande CMD et entrez cette commande
+
+C:\Utilisateur>pip install tkcalendar
+
+C:\Utilisateur>pip install pymsql
