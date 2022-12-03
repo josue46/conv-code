@@ -2,7 +2,6 @@ from flask import Flask
 import datetime
 from flask import render_template
 import webbrowser
-import time
 
 # l'hôte
 HOST = "127.0.0.1"
