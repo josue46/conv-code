@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="josue luis">
+    <title>{{title}}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div></div>
+    <!-- main contenair -->
+    <div class="contenair">
+        <div class="header">
+            <h1>{{title}}</h1>
+        </div>
+        <div class="block1">
+            <legend>Taux & Devises</legend>
+            <input type="text" id="taux" placeholder="Taux:" class="input-add" maxlength="4"><br/><br/>
+            <select id="devise" name="">
+                <option selected>Selectionnez une devise</option>
+                {% for devise in devises %}
+                <option>{{devise}}</option>
+                {% endfor %}
+            </select><br/>
+        </div><br/>
+        <div class="block2">
+            <legend>Montant</legend>
+            <input type="text" id="montant" placeholder="Montant:" class="input-add">
+            <br><br>
+            <input type="text" value="" id="resultat" placeholder="Resultat:" class="input-add"><br/>
+        </div><br/>
+        <input type="submit" id="button" value="Convertir" class="btn" class="input-add">
+        <hr>
+        <div class="footer">
+            <footer>
+                <h6>{{today}}</h6>
+                {# short description #}
+                {% with description = 'created by josue luis.' %}
+                <p>{{description|title}}</p>
+                {% endwith %}
+                <p style="text-align: center;"><sup>&copy</sup>{{years}} Walborn. All rights reserved. Inc.</p>
+                <p style="text-align: center;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="blue" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                    </svg> luis martin's
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="skyblue" class="bi bi-telegram" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.287 5.906c-.778.324-2.334.994-4.666 2.01-.378.15-.577.298-.595.442-.03.243.275.339.69.47l.175.055c.408.133.958.288 1.243.294.26.006.549-.1.868-.32 2.179-1.471 3.304-2.214 3.374-2.23.05-.012.12-.026.166.016.047.041.042.12.037.141-.03.129-1.227 1.241-1.846 1.817-.193.18-.33.307-.358.336a8.154 8.154 0 0 1-.188.186c-.38.366-.664.64.015 1.088.327.216.589.393.85.571.284.194.568.387.936.629.093.06.183.125.27.187.331.236.63.448.997.414.214-.02.435-.22.547-.82.265-1.417.786-4.486.906-5.751a1.426 1.426 0 0 0-.013-.315.337.337 0 0 0-.114-.217.526.526 0 0 0-.31-.093c-.3.005-.763.166-2.984 1.09z"/>
+                    </svg>+243 842761741
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="green" class="bi bi-whatsapp" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
+                    </svg>+243 842761741 
+                </p>
+            </footer>
+        </div>
+    </div>
+
+    
+    <script type="text/javascript">
+        /*
+        document.getElementById('button').addEventListener('click', function(e){
+            e.preventDefault;
+            try{
+                var taux = document.getElementById('taux').value;
+                var devise = document.getElementById('devise').value;
+                var montant = document.getElementById('montant').value;
+
+                if (montant === ''){
+                    alert('Vous devez entrer un montant !');
+                }
+
+                else if (isNaN(montant)) {
+                    alert('Vous avez entré un montant incorrect\r\nVeuillez entrer un montant correct puis réessayez !');
+                }
+
+                if (taux === '') {
+                    alert('Vous devez entrer un taux d\'échange !');
+                }
+
+                else if (isNaN(taux)) {
+                    alert('Le taux entré est incorrect\r\nVeuillez entrer un taux correct puis réessayez !');
+                }
+
+                if (devise === 'Selectionnez une devise') {
+                    alert('Vous devez selectionner une devise\nFC ou USD');
+                }
+
+                else if (devise === 'FC') {
+                    var conv = montant / taux;
+                    var sym = '$';
+                    console.log(conv);
+                }
+
+                else if (devise === 'USD') {
+                    var conv = montant * taux;
+                    var sym = 'FC';
+                    console.log(conv);
+                }
+
+                var res = document.getElementById('resultat').value=conv + ' ' + sym;
+            }
+            catch(e){
+                e.Error();
+                //------------------
+            }
+        }) */
+
+        // ++++++ MAIN SCRIPT OF PROGRAM ++++++
+        document.getElementById('button').addEventListener('click', function(e){
+            e.preventDefault;
+            try{
+                var taux = document.getElementById('taux').value;
+                var devise = document.getElementById('devise').value;
+                var montant = document.getElementById('montant').value;
+
+                if (montant === ''){
+                    alert('Vous devez entrer un montant !');
+                }
+
+                else if (isNaN(montant)) {
+                    alert('Vous avez entré un montant incorrect\r\nVeuillez entrer un montant correct puis réessayez !');
+                    return 1;
+                }
+
+                if (isNaN(taux)) {
+                    alert('Le taux entré est incorrect\r\nVeuillez entrer un taux correct puis réessayez !');
+                    return 1;
+                }
+
+                if (devise === 'Selectionnez une devise') {
+                    alert('Vous devez selectionner une devise !');
+                }
+
+                else if (devise === 'CDF') {
+                    if (taux === '') {
+                        alert('Vous devez entrer un taux de change !');
+                        return 1;
+                    }
+
+                    else{
+                        var conv = parseFloat(montant) / parseFloat(taux);
+                        var sym = '$';
+
+                        console.log(conv);
+
+                        var res = document.getElementById('resultat').value=conv + ' ' + sym;
+                    }
+                }
+
+                else if (devise === 'USD') {
+                    if (taux === ''){
+                        alert('Vous devez entrer un taux de change !');
+                        return 1;
+                    }
+                    
+                    else{
+                        var conv = parseFloat(montant) * parseFloat(taux);
+                        var sym = 'FC';
+
+                        console.log(conv);
+
+                        var res = document.getElementById('resultat').value=conv + ' ' + sym;
+                    }
+                }
+
+                else if (devise === "BTC") {
+                    alert("Cette devise n'est disponible que dans la version payante");
+                }
+
+                else if (devise === 'EUR') {
+                    alert("Cette devise n'est disponible que dans la version payante");
+                }
+
+            }
+            catch(e){
+                e.Error();
+                //------------------
+            }
+        })
+    </script>
+</body>
+</html>
