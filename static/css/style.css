@@ -1,0 +1,57 @@
+body{
+	text-align: center;
+	text-decoration: none;
+	background: whitesmoke;
+	margin: 10px 10px 10px 10px;
+	padding: 10px 10px 10px 10px;
+}
+
+.btn{
+	border: none;
+	padding:10px;
+	color: #fff;
+	border-radius: 16px/16px;
+	text-decoration: none;
+	width: 20%;
+	text-align: center;
+	background-color: mediumseagreen;
+}
+
+.header{
+	top: 0px; left: 0px; right: 0px;
+	min-height: 50px;
+	background: mediumseagreen;
+	color: #ffffff;
+	text-align: center;
+	border: none;
+	border-radius: 5px;
+}
+
+.input-add{
+	padding: 5px;
+	border-radius:10px/10px;
+	border: 1px solid #ddd;
+}
+
+.block1, .block2{
+	padding-left: 0px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-right: 0px;
+	margin: 0px 0px 0px 0px;
+}
+.block2{
+	text-align: inherit;
+}
+
+.block1{
+	text-align: left;
+}
+
+#button{
+	text-align: center;
+}
+
+footer{
+	text-align: left;
+}
